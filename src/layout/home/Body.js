@@ -35,6 +35,11 @@ const linkList=[
 ]
 function Body() {
     const preventDefault = (event) => event.preventDefault();
+    const [count, setCount] = useState(0);
+
+    const buttonHandle = () => {
+        setCount(count+1)
+    }
     return (
         <div className="background" style={{justifyContent:"center",
         display:'flex', flexDirection:'column'}}>
@@ -49,7 +54,7 @@ function Body() {
                     <Grid item xs={6} style={{ paddingLeft:"50px", paddingTop:"400px"}}> 
                     {linkList.map((value)=>(
                         <div key={value.name} style={{display:'flex', flexDirection:'row', justifyContent:'left'}}>
-                        <Link href="#" onClick={preventDefault}>
+                        <Link href="#" onClick={buttonHandle}>
                             <Typography style={{color:"White" ,fontSize:"30px", textDecoration:"none", textAlign:"webkit"}}>
                                 {value.name}
                             </Typography>
